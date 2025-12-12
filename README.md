@@ -24,3 +24,9 @@ Por fim, execute a aplicação para que as entidades sejam criadas no banco e os
 
 ### 7 - Visualização 
 Na URL do navegador digite: http://localhost:8000/task
+
+**Atenção** 
+
+Para executar cada um dos end-points, pode ser utilizado o **Swagger**
+http://localhost:8000/swagger-ui/index.html#/
+
