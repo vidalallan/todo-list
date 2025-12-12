@@ -1,4 +1,4 @@
-# Configurando o Ionic no PC
+# Configurando o Spring Boot no PC
 
 ### Terminal (CMD)
 Abra o seu terminal e navegue até o diretório onde deseja clonar o projeto. Exemplo:
