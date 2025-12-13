@@ -26,7 +26,7 @@ public class UserService {
         user.setEmail(data.email());
         user.setPassword(data.password());
         user.setPicture(data.picture());
-        
+
         user.setCreatedAt(LocalDateTime.now());
         user.setUpdatedAt(LocalDateTime.now());
         user.setDeleted(false);

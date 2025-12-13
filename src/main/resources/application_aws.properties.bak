@@ -1,0 +1,7 @@
+server.port=8000
+spring.application.name=prj_prodesp
+spring.datasource.url=jdbc:postgresql://database-todolist.cc7k8sc06des.us-east-1.rds.amazonaws.com/dbTodoListAws
+spring.datasource.username=postgres
+spring.datasource.password=W:6xRpqqrjK_YDb
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.hibernate.ddl-auto=update

@@ -38,7 +38,7 @@
             }
 
 
-            @GetMapping("/deleted/{deleted}")
+            @PutMapping("/deleted/{deleted}")
             public ResponseEntity<List<User>> getUserByDeleted(@PathVariable Boolean deleted){
                 return ResponseEntity.ok().body(userService.findByDeleted(deleted));
             }
