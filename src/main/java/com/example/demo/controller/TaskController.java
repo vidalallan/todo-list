@@ -1,8 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.domain.task.Task;
-import com.example.demo.domain.task.TaskRequestDTO;
-import com.example.demo.domain.task.TaskResponseDTO;
+import com.example.demo.domain.task.*;
 import com.example.demo.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -51,5 +49,21 @@ public class TaskController {
     public ResponseEntity<TaskResponseDTO> findById(@PathVariable UUID id) {
         Task task = taskService.findById(id);
         return ResponseEntity.ok(taskService.toResponseDTO(task));
+    }
+
+    @GetMapping("/count")
+    public ResponseEntity<TaskDeletedDTO> countTaskStatusTask() {
+        TaskDeletedDTO counts = taskService.countStatusTask();
+        return ResponseEntity.ok(counts);
+    }
+
+    @GetMapping("/countByType")
+    public ResponseEntity<List<TaskTypeCountDTO>> getCountByType() {
+        return ResponseEntity.ok(taskService.getTasksCountByType());
+    }
+
+    @GetMapping("/countByStatus")
+    public ResponseEntity<List<TaskStatusCountDTO>> getCountByStatus() {
+        return ResponseEntity.ok(taskService.getTasksCountByStatus());
     }
 }

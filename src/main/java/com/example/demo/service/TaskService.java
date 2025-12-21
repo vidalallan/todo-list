@@ -1,9 +1,8 @@
 package com.example.demo.service;
 
 import com.example.demo.domain.statustask.StatusTask;
-import com.example.demo.domain.task.Task;
-import com.example.demo.domain.task.TaskRequestDTO;
-import com.example.demo.domain.task.TaskResponseDTO;
+import com.example.demo.domain.statustask.StatusTaskDeletedDTO;
+import com.example.demo.domain.task.*;
 import com.example.demo.domain.typetask.TypeTask;
 import com.example.demo.domain.user.User;
 import com.example.demo.repositories.TaskRepository;
@@ -131,4 +130,23 @@ public class TaskService {
         return taskRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Task not found"));
     }
+
+    public TaskDeletedDTO countStatusTask(){
+        long delTrue = taskRepository.countByDeleted(true);
+        long delFalse = taskRepository.countByDeleted(false);
+        long total = taskRepository.count();
+
+        return new TaskDeletedDTO(delFalse, delTrue, total);
+    }
+
+    public List<TaskTypeCountDTO> getTasksCountByType() {
+        return taskRepository.countTasksByType();
+    }
+
+    public List<TaskStatusCountDTO> getTasksCountByStatus() {
+        return taskRepository.countTasksByStatus();
+    }
+
+
+
 }

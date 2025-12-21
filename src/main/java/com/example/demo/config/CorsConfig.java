@@ -10,7 +10,7 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:8100", "http://localhost:4200") // autoriza o ionic
+                .allowedOrigins("http://localhost:9000","http://localhost:8100", "http://localhost:4200") // autoriza o quasar - porta 9000
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
