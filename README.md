@@ -31,3 +31,4 @@ Para executar cada um dos end-points, pode ser utilizado o **Swagger**
 
 http://localhost:8000/swagger-ui/index.html#/
 
+Foi implementado no arquivo application_aws_properties com as configurações para o banco de dados na AWS, mas por padrão o banco utilizado é local.
